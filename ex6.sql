@@ -1,4 +1,4 @@
-/*Sélectionner les entités créées après une certaine date (par exemple, le 1er janvier 2000)*/
+/*Trouver tous les intermédiaires et leurs adresses associées*/
 
 SELECT intermediary.name, address.address
 FROM intermediary
