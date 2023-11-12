@@ -1,8 +1,6 @@
-/*Lister les entités et leurs intermédiaires associés*/
+/*Trouver le nombre d'entités associées à chaque intermédiaire*/
 
-SELECT entity.name AS "Entity", intermediary.name AS "Intermediary"
+SELECT intermediary.name AS "Intermediary", COUNT(assoc_inter_entity.entity) AS "Nombre_entité"
 FROM assoc_inter_entity
-JOIN entity 
-ON entity.id = assoc_inter_entity.entity
-JOIN intermediary 
-ON intermediary.id = assoc_inter_entity.inter
+JOIN intermediary ON intermediary.id = assoc_inter_entity.inter
+GROUP BY intermediary.name
